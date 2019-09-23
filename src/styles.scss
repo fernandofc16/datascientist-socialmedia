@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$primary: rgb(221, 239, 255);
+$secondary: rgb(38, 153, 251);
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 1.2rem;
+    height: 100%;
+    background-color: rgb(205, 205, 225);
+}
+
+header {
+    background: $primary;
+    padding: 1em 0;
+
+    a {
+        color: $secondary;
+        text-decoration: none;
+    }
+    a.logo {
+        font-weight: bold;
+    }
+
+    nav {
+        float: right;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+
+            li a {
+                padding: 1em;
+
+                &:hover {
+                    background: darken($primary, 5%);
+                }
+            }
+        }
+    }
+}
+
+h1 {
+    margin-top: 2em;
+}

@@ -1,0 +1,60 @@
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav position="end" [mode]="innerWidth < 1700 ? 'over' : 'side'">
+        <span class="close" (click)="sidenav.close()">
+            <mat-icon aria-hidden="false">close</mat-icon>
+        </span>
+        <div class="contact-list">
+            <div class="contacts" *ngFor="let contact of contacts">
+                <div class="contact-card">
+                    <img src="https://t3.ftcdn.net/jpg/00/64/67/52/240_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
+                        alt="Default Profile Picture">
+                    <p class="name">{{ contact.name }}</p>
+                    <p class="email">{{ contact.email }}</p>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="profile-container">
+            <img src="https://t3.ftcdn.net/jpg/00/64/67/52/240_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
+                alt="Default profile picture">
+            <div class="profile-infos">
+                <p class="pname">{{ profileName }}</p>
+                <p class="plocation">{{ profileLocation }}</p>
+            </div>
+
+            <div class="infos">
+                <p><span> {{ postsNumber }} Posts </span></p>
+                <p><span [style.background-color]="followText == 'Seguir' ? 'rgb(221, 239, 255)' : 'rgb(194, 228, 255)'"
+                        (click)="followProfile()"> {{ followText }} </span></p>
+                <p><span (click)="sidenav.toggle()"> {{ friendsNumber }} Amigos </span></p>
+            </div>
+
+        </div>
+
+        <p class="profilePresentation">Hi my name is Fernando, I curently work at Google and I'm from San Francisco -
+            CA, I enjoy creating machine learning solutions for web and mobile applications, if you are interested,
+            please contact me on my e-mail fernandofc16@gmail.com</p>
+
+        <div class="posts-container">
+            <h2>Posts</h2>
+
+            <div class="post-card" *ngFor="let n of [0,1,2,3,4,5]">
+                <div class="post-text">
+                    <h3>Excepteur sint</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <div class="votes">
+                            <mat-icon aria-hidden="false">arrow_upward</mat-icon>
+                            <mat-icon aria-hidden="false">arrow_downward</mat-icon>
+                            <p>0</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
